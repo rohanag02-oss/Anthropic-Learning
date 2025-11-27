@@ -1,7 +1,11 @@
 #load the environment variables
 from dotenv import load_dotenv
+import os
 
-load_dotenv()
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# Load .env file from the same directory as this script
+load_dotenv(os.path.join(script_dir, '.env'))
 
 #Create an API Client to interact with the Anthropic API
 from anthropic import Anthropic
